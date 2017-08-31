@@ -16,9 +16,9 @@ namespace PB.ITOps.Messaging.DataProtection
             var cleanMachineName = Regex.Replace(Environment.MachineName, "[^a-zA-Z0-9]", "");
             var storageAccount = new CloudStorageAccount(new StorageCredentials(account, keyVal), true);
 
-            string relativePath = "/data-protection-keys/patlite.xml";
+            string relativePath = $"/data-protection-keys/patlite-{config.ApplicationName}.xml";
 #if DEBUG
-            relativePath = $"/data-protection-keys/patlite-{cleanMachineName}.xml";
+            relativePath = $"/data-protection-keys/patlite-{config.ApplicationName}-{cleanMachineName}.xml";
 #endif
 
             var certificate = CertificateHelper.FindCertificateByThumbprint(config.Thumbprint);
@@ -28,6 +28,7 @@ namespace PB.ITOps.Messaging.DataProtection
                 builder =>
                 {
                     builder
+                        .SetApplicationName(config.ApplicationName)
                         .PersistKeysToAzureBlobStorage(storageAccount, relativePath)
                         .ProtectKeysWithCertificate(certificate);
                 });
