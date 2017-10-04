@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
 	  <PackageId>PB.ITOps.Messaging.DataProtection</PackageId>
     <Description>Purplebricks data protection mechanism to support encryption and decryption of messages</Description>
 	  <Company>Purplebricks</Company>
@@ -8,7 +8,7 @@
     <Version>0.1.$(buildCounter)</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection.AzureStorage" Version="1.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.AzureStorage" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" Version="2.0.0" />
   </ItemGroup>
 </Project>
