@@ -1,4 +1,4 @@
-﻿namespace PB.ITOps.Messaging.DataProtection
+﻿namespace Pat.DataProtection
 {
     public class DataProtectionConfiguration
     {

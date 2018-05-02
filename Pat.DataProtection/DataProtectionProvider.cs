@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 
-namespace PB.ITOps.Messaging.DataProtection
+namespace Pat.DataProtection
 {
     public static class DataProtectionProvider
     {
