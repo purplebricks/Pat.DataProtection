@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net451</TargetFrameworks>
-	  <PackageId>PB.ITOps.Messaging.DataProtection</PackageId>
+	  <PackageId>Pat.DataProtection</PackageId>
     <Description>Purplebricks data protection mechanism to support encryption and decryption of messages</Description>
 	  <Company>Purplebricks</Company>
     <buildCounter Condition=" '$(buildCounter)' == '' ">0</buildCounter>

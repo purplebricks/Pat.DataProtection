@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace PB.ITOps.Messaging.DataProtection
+namespace Pat.DataProtection
 {
     public static class CertificateHelper
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PB.ITOps.Messaging.DataProtection", "PB.ITOps.Messaging.DataProtection\PB.ITOps.Messaging.DataProtection.csproj", "{EAB9447A-4C05-456B-B660-DC07EC467C00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pat.DataProtection", "Pat.DataProtection\Pat.DataProtection.csproj", "{EAB9447A-4C05-456B-B660-DC07EC467C00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
