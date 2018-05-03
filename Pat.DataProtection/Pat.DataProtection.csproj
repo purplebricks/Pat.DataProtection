@@ -4,8 +4,8 @@
 	  <PackageId>Pat.DataProtection</PackageId>
     <Description>Purplebricks data protection mechanism to support encryption and decryption of messages</Description>
 	  <Company>Purplebricks</Company>
-    <buildCounter Condition=" '$(buildCounter)' == '' ">0</buildCounter>
-    <Version>1.0.$(buildCounter)</Version>
+    <License>https://github.com/purplebricks/Pat.DataProtection/blob/master/LICENSE</License>
+    <Version>0.0.0</Version>
     <Configurations>Debug;Release;NET452;NETSTANDARD2</Configurations>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'NET451'">
