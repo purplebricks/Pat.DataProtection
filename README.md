@@ -1,3 +1,7 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/2df8y529t1sq75xf?svg=true)](https://ci.appveyor.com/project/ilivewithian/pat-dataprotection)
+[![NuGet](https://img.shields.io/nuget/v/Pat.DataProtection.svg)](https://www.nuget.org/packages/Pat.DataProtection/)
+
+
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
