@@ -2,11 +2,17 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net451</TargetFrameworks>
 	  <PackageId>Pat.DataProtection</PackageId>
-    <Description>Purplebricks data protection mechanism to support encryption and decryption of messages</Description>
 	  <Company>Purplebricks</Company>
-    <License>https://github.com/purplebricks/Pat.DataProtection/blob/master/LICENSE</License>
     <Version>0.0.0</Version>
     <Configurations>Debug;Release;NET452;NETSTANDARD2</Configurations>
+    <Summary>Purplebricks data protection mechanism to support encryption and decryption of messages</Summary>
+    <Description>Purplebricks data protection mechanism to support encryption and decryption of messages</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageIconUrl>https://pbonlineassets.azureedge.net/web-images/favicons/favicon-96x96.png</PackageIconUrl>
+    <PackageProjectUrl>http://purplebricks.io/pat/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/purplebricks/Pat.DataProtection/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/purplebricks/Pat.DataProtection</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'NET451'">
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.AzureStorage" Version="1.0.3" />
