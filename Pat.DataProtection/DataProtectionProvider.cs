@@ -7,8 +7,17 @@ using Microsoft.WindowsAzure.Storage.Auth;
 
 namespace Pat.DataProtection
 {
+    /// <summary>
+    /// Factory method to create an instance of Microsoft.AspNetCore.DataProtection.DataProtectionProvider
+    /// </summary>
     public static class DataProtectionProvider
     {
+        /// <summary>
+        /// Creates an Microsoft.AspNetCore.DataProtection.DataProtectionProvider given 
+        /// appropriate configuration.
+        /// </summary>
+        /// <param name="config">The configuration applied to the DataProtectionProvider </param>
+        /// <returns>An instance of Microsoft.AspNetCore.DataProtection.DataProtectionProvider</returns>
         public static IDataProtectionProvider Create(DataProtectionConfiguration config)
         {
             var account = config.AccountName;
@@ -17,9 +26,6 @@ namespace Pat.DataProtection
             var storageAccount = new CloudStorageAccount(new StorageCredentials(account, keyVal), true);
 
             string relativePath = $"/data-protection-keys/patlite-{config.ApplicationName}.xml";
-#if DEBUG
-            relativePath = $"/data-protection-keys/patlite-{config.ApplicationName}-{cleanMachineName}.xml";
-#endif
 
             var certificate = CertificateHelper.FindCertificateByThumbprint(config.Thumbprint);
 

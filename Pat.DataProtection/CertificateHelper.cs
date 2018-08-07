@@ -3,9 +3,9 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Pat.DataProtection
 {
-    public static class CertificateHelper
+    internal static class CertificateHelper
     {
-        public static X509Certificate2 FindCertificateByThumbprint(string findValue)
+        internal static X509Certificate2 FindCertificateByThumbprint(string findValue)
         {
             var x509Store1 = new X509Store(StoreName.My, StoreLocation.CurrentUser);
             try
