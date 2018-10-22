@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net451</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452;net47;</TargetFrameworks>
 	  <PackageId>Pat.DataProtection</PackageId>
 	  <Company>Purplebricks</Company>
     <Version>0.0.0</Version>
-    <Configurations>Debug;Release;NET452;NETSTANDARD2</Configurations>
     <Summary>Purplebricks data protection mechanism to support encryption and decryption of messages</Summary>
     <Description>Purplebricks data protection mechanism to support encryption and decryption of messages</Description>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -14,12 +14,15 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/purplebricks/Pat.DataProtection</RepositoryUrl>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'NET451'">
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.AzureStorage" Version="1.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" Version="1.1.3" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'NETSTANDARD2.0'">
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'NETSTANDARD2.0' or '$(TargetFramework)' == 'net47'">
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.AzureStorage" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" Version="2.0.0" />
   </ItemGroup>
+
 </Project>
