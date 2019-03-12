@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net452;net47;</TargetFrameworks>
-	  <PackageId>Pat.DataProtection</PackageId>
-	  <Company>Purplebricks</Company>
+    <PackageId>Pat.DataProtection</PackageId>
+    <Company>Purplebricks</Company>
     <Version>0.0.0</Version>
     <Summary>Purplebricks data protection mechanism to support encryption and decryption of messages</Summary>
     <Description>Purplebricks data protection mechanism to support encryption and decryption of messages</Description>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageIconUrl>https://pbonlineassets.azureedge.net/web-images/favicons/favicon-96x96.png</PackageIconUrl>
+    <PackageIconUrl>Update PB Logo to Current Branding</PackageIconUrl>
     <PackageProjectUrl>http://purplebricks.io/pat/</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/purplebricks/Pat.DataProtection/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
