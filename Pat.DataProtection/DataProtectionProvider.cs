@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
-using System.Text.RegularExpressions;
+using System.Security.Cryptography.X509Certificates;
+using Azure.Identity;
 using Microsoft.AspNetCore.DataProtection;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.Azure.Storage;
+using Microsoft.Azure.Storage.Auth;
 
 namespace Pat.DataProtection
 {
@@ -20,23 +21,28 @@ namespace Pat.DataProtection
         /// <returns>An instance of Microsoft.AspNetCore.DataProtection.DataProtectionProvider</returns>
         public static IDataProtectionProvider Create(DataProtectionConfiguration config)
         {
-            var account = config.AccountName;
-            var keyVal = config.AccountKey;
-            var cleanMachineName = Regex.Replace(Environment.MachineName, "[^a-zA-Z0-9]", "");
-            var storageAccount = new CloudStorageAccount(new StorageCredentials(account, keyVal), true);
+            var relativePath = $"/patlite-{config.ApplicationName}.xml";
 
-            string relativePath = $"/data-protection-keys/patlite-{config.ApplicationName}.xml";
-
-            var certificate = CertificateHelper.FindCertificateByThumbprint(config.Thumbprint);
+            var certificate = string.IsNullOrEmpty(config.Certificate)
+                ? CertificateHelper.FindCertificateByThumbprint(config.Thumbprint)
+                : new X509Certificate2(Convert.FromBase64String(config.Certificate));
 
             return Microsoft.AspNetCore.DataProtection.DataProtectionProvider.Create(
-                new DirectoryInfo(@"c:\keyring"),
+                new DirectoryInfo(@"~/keyring"),
                 builder =>
                 {
-                    builder
-                        .SetApplicationName(config.ApplicationName)
-                        .PersistKeysToAzureBlobStorage(storageAccount, relativePath)
-                        .ProtectKeysWithCertificate(certificate);
+                    builder.SetApplicationName(config.ApplicationName);
+
+                    if (!string.IsNullOrEmpty(config.StorageAccountUrl))
+                    {
+                        builder.PersistKeysToAzureBlobStorage(new Uri(config.StorageAccountUrl + relativePath), new DefaultAzureCredential());
+                    }
+                    else
+                    {
+                        builder.PersistKeysToAzureBlobStorage(new CloudStorageAccount(new StorageCredentials(config.AccountName, config.AccountKey), true), relativePath);
+                    }
+
+                    builder.ProtectKeysWithCertificate(certificate);
                 });
         }
     }

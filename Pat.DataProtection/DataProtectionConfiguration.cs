@@ -21,5 +21,13 @@
         /// The thumbprint of the certificate used to protect the keys.
         /// </summary>
         public string Thumbprint { get; set; }
+        /// <summary>
+        /// Azure blob storage account url. If set code uses managed identities
+        /// </summary>
+        public string StorageAccountUrl { get; set; }
+        /// <summary>
+        /// String representation of the certificate from Azure Key Vault. If set this is used instead of looking for the certificate by thumbprint from X509Store
+        /// </summary>
+        public string Certificate { get; set; }
     }
 }
