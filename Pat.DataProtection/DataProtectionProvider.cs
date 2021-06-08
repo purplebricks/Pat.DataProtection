@@ -1,10 +1,10 @@
-﻿using Azure.Identity;
+﻿using System;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using Azure.Identity;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Azure.Storage;
 using Microsoft.Azure.Storage.Auth;
-using System;
-using System.IO;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Pat.DataProtection
 {
