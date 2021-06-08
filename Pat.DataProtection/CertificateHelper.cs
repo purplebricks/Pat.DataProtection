@@ -15,7 +15,7 @@ namespace Pat.DataProtection
                 if (certificate2Collection.Count == 0)
                 {
                     var x509Store2 = new X509Store(StoreName.My, StoreLocation.LocalMachine);
-                    try 
+                    try
                     {
                         x509Store2.Open(OpenFlags.ReadOnly);
                         certificate2Collection = x509Store2.Certificates.Find(X509FindType.FindByThumbprint,
